@@ -21,3 +21,6 @@ deploy:
   provider: heroku
   api_key:
     secure: "92d436b2-a87f-4853-bd6f-71f6252107f8"
+  app: salty-plains-87693
+    on:
+      repo: PiperS52/acebook-CLOBS
