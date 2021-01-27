@@ -1,26 +1,24 @@
 language: ruby
 rvm:
-  - 2.5
+- 2.5
 env:
   global:
-    - CC_TEST_REPORTER_ID=ce6bd7b5220a3a88d8ce3aac3f9c0b148ab1262010e677d36b9b647b537e6925
+  - CC_TEST_REPORTER_ID=ce6bd7b5220a3a88d8ce3aac3f9c0b148ab1262010e677d36b9b647b537e6925
 services:
-  - postgresql
+- postgresql
 before_script:
-  - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-  - chmod +x ./cc-test-reporter
-  - ./cc-test-reporter before-build
+- curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
+  > ./cc-test-reporter
+- chmod +x ./cc-test-reporter
+- "./cc-test-reporter before-build"
 script:
-  - bundle install
-  - bundle exec bin/rails db:create
-  - bundle exec bin/rails db:migrate
-  - bundle exec rspec
+- bundle install
+- bundle exec bin/rails db:create
+- bundle exec bin/rails db:migrate
+- bundle exec rspec
 after_script:
-  - ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+- "./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT"
 deploy:
   provider: heroku
   api_key:
-    secure: J/wLcm48CwXD+Pg6jIKEnt7aq8ko+jv437Eoa+BFJSupIol7kEJXRc1VTKLdPIbnzkoiHPU8bh1AT8sTH1ZTM03mxAe1y33zqEVmw+dx88fal/mqJISBs6jVigUqPN+DjrgcAU6Zgx2e9TkRBUCU/0fQD5IcBha3WSdVEN4viVIM8lOoEi3L0JIbGzvioLiOCFd6GCMAzgC3VtkPoSK5OhXVUYK2O/DslWV66RbgYMVyihkOXV81j/B3DiSX73PhjvLA2jsBMq27Qf2xdUDfaA8qqL4FjzTFmh7wEzVjV9aWJulvs+9aPPcMoDHqFGEbvCb1yxUUhc1xQPJTh7lYZKeYUA5WJNWY0Yf2nXEiffSxQyO/pzAnMXAoxOJwpJzzoPYPcjaVFVzny+NqdPA0BgDvuIAE9EK+qHceQqnFsI59SWLBQuPxLBDSrrE3ZHBHkHC6sQBssL3N8iWLFVN9nL0uH+LtYQQnA+srh/QjoJahQ5THPNCMmMcytnjDiI2p1D1xHOS5IAirgFUj+KQxcTQEYpcj+RKPhF86+8AgW4bkukGscLUFTxeAsCgmFDGHERxq8HXZUIWm1RFswAt7FVD3T//kdE2NDOsiigZy03b4JletL1eZcvSdNcwDT2PLjoRKaYxk9Uj/ztPnwWMSmns5t7WVXLjeCh4SQcxXW1U=
-  app: salty-plains-87693
-    on:
-      repo: PiperS52/acebook-CLOBS
+    secure: PtHLgKUZuAar3gWa9MHUvREjeEf1c7Ju2BW8xIb8QKG7fmfjubyRGs20VePoH5TBSxcMIy/3HniDrN4PfRyZJYfFfc6YErbGY783hzje93q4CTO6d34dHNtauhxywr3c9KOZOfOnXtuTMhIVmUOhEFrEGgO6BlnofRXs4b0bRd5i5uvMc20fWkYjzwV2Z4Uejqojstw1LsQNLpAEz8DTaHH1RdbPha6vqstLUrWgdTk/a/aYlG/Zjw+5X+oZ7SZmEebF3LlbXv2ehFRSX2RMJtzV93SIah6hwHpNlSG61ov/hneKi5yQWBbj0jFx2M7+zXhMJiabcHYLdcaVQAONaS7AyxMYKNUF71WiGltpwrp4F1cPzXxXma9jIAquYNvPsfAgOd9v3T2ysntnyhlA2lIJcTm8lYLn7AAUru9yUOzaaVlru9KOHTPcJ19msQJcksb64xX7HtMn0GAAl2e1T/444yP0c+IkXOkdgre7UwcvfQChxiwo/2xIALZYhcfQlSGaoK0jzWxLqLhUQkAUsWSfz3rPlqvqUKbT5UUIZEMC/ocIiAaz0XDYedmhEZV2iKozB8L5EBsm6D2vV5Srq8TzgsMIw7TpscohCokY3qver0wYIkyNvYBul31n/PtgGy+bHjBbBYl1/vqac5alTwAiCMVL8paB5K8Kdbyn8T0=
