@@ -1,5 +1,6 @@
 {
   "name": "acebook",
   "private": true,
-  "dependencies": {}
+  "dependencies": {},
+  "type": "module"
 }
