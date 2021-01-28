@@ -1,7 +1,18 @@
-<% @posts.each do |post| %>
-  <p><%= post.message %></p>
-<% end %>
+<%= stylesheet_link_tag '../../assets/stylesheets/posts.stylesheets.css' %>
 
-<%= link_to new_post_path do %>
-  New post
-<% end %>
+<div class='posts-container'>
+
+  <div class='new-post-link'>
+    <%= link_to new_post_path do %>
+      New Post
+    <% end %>
+  </div>
+
+  </div class='show-posts'>
+    <% @posts.each do |post| %>
+      <p><%= post.message %></p>
+    <% end %>
+  </div>
+
+</div>
+
