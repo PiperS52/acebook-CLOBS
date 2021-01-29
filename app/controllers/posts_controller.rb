@@ -1,6 +1,13 @@
 class PostsController < ApplicationController
 
   before_action :authorize, except: :index
+  def index
+    @posts = Post.all
+  end
+
+  def show
+    @post = Post.find(params[:id])
+  end 
 
   def new
     @post = Post.new
@@ -9,10 +16,6 @@ class PostsController < ApplicationController
   def create
     @post = Post.create(post_params)
     redirect_to posts_url
-  end
-
-  def index
-    @posts = Post.all
   end
 
   private
