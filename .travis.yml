@@ -10,15 +10,14 @@ before_script:
 - curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64
   > ./cc-test-reporter
 - chmod +x ./cc-test-reporter
-- "./cc-test-reporter before-build"
+- ./cc-test-reporter before-build
 script:
 - bundle install
 - bundle exec bin/rails db:create
 - bundle exec bin/rails db:migrate
 - bundle exec rspec
 after_script:
-- "./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT"
-deploy:
-  provider: heroku
-  api_key:
-    secure: J/wLcm48CwXD+Pg6jIKEnt7aq8ko+jv437Eoa+BFJSupIol7kEJXRc1VTKLdPIbnzkoiHPU8bh1AT8sTH1ZTM03mxAe1y33zqEVmw+dx88fal/mqJISBs6jVigUqPN+DjrgcAU6Zgx2e9TkRBUCU/0fQD5IcBha3WSdVEN4viVIM8lOoEi3L0JIbGzvioLiOCFd6GCMAzgC3VtkPoSK5OhXVUYK2O/DslWV66RbgYMVyihkOXV81j/B3DiSX73PhjvLA2jsBMq27Qf2xdUDfaA8qqL4FjzTFmh7wEzVjV9aWJulvs+9aPPcMoDHqFGEbvCb1yxUUhc1xQPJTh7lYZKeYUA5WJNWY0Yf2nXEiffSxQyO/pzAnMXAoxOJwpJzzoPYPcjaVFVzny+NqdPA0BgDvuIAE9EK+qHceQqnFsI59SWLBQuPxLBDSrrE3ZHBHkHC6sQBssL3N8iWLFVN9nL0uH+LtYQQnA+srh/QjoJahQ5THPNCMmMcytnjDiI2p1D1xHOS5IAirgFUj+KQxcTQEYpcj+RKPhF86+8AgW4bkukGscLUFTxeAsCgmFDGHERxq8HXZUIWm1RFswAt7FVD3T//kdE2NDOsiigZy03b4JletL1eZcvSdNcwDT2PLjoRKaYxk9Uj/ztPnwWMSmns5t7WVXLjeCh4SQcxXW1U=
+- ./cc-test-reporter after-build --exit-code $TRAVIS_TEST_RESULT
+
+- name: Code Climate Coverage Action
+  uses: paambaati/codeclimate-action@v2.7.5
