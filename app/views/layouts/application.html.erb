@@ -6,8 +6,8 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Amatic+SC&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-  
-    
+
+
     <%# <%= stylesheet_link_tag 'main_app', media: 'all' %>
 
     <%= stylesheet_link_tag    'application', media: 'all' %>
@@ -19,10 +19,10 @@
     <div class="navbar-collapse collapse w-100 order-1 order-md-0 dual-collapse2">
         <ul class="navbar-nav mr-auto">
           <% if current_user %>
-              <li class="nav-item" > 
-                <a class="nav-link">Logged in as: <%= current_user.email %></a>
+              <li class="nav-item" >
+                <a class="nav-link">Logged in as: <%= current_user.username %></a>
               </li>
-              <li class="nav-item"> 
+              <li class="nav-item">
                 <a class="nav-link" <%= link_to "Log Out", session_path("current"), method: "delete" %></a>
               </li>
             <% else %>
