@@ -1,6 +1,8 @@
 {
   "name": "acebook",
   "private": true,
+
+  "proxy": "http://localhost:3000",
   "dependencies": {
     "@babel/preset-react": "^7.12.10",
     "@rails/webpacker": "4.3.0",
@@ -13,4 +15,5 @@
   "devDependencies": {
     "webpack-dev-server": "^3.11.2"
   }
+ 
 }

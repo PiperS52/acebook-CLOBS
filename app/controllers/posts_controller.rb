@@ -1,6 +1,12 @@
 class PostsController < ApplicationController
 
   before_action :authorize, except: :index
+  skip_before_action :verify_authenticity_token
+
+
+  def show
+    @post = Post.find(params[:id])
+  end 
 
   def new
     @post = Post.new
@@ -15,9 +21,15 @@ class PostsController < ApplicationController
     @posts = Post.all
   end
 
+  def data
+    @posts = Post.all
+    render json: @posts.to_json
+  end
+
   private
 
   def post_params
     params.require(:post).permit(:message, :user_id)
   end 
+
 end
