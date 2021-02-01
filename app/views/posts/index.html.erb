@@ -1,16 +1,9 @@
-<div class='posts-container'>
 
-  <div class='new-post-link'>
-    <%= link_to new_post_path do %>
-      New Post
-    <% end %>
-  </div>
+<%= javascript_pack_tag 'application' %>
 
-  </div class='show-posts'>
-    <% @posts.each do |post| %>
-      <p><%= post.message %></p>
-    <% end %>
-  </div>
+<%= react_component("MyComponent", { data:@posts }) %>
 
-</div>
+<%= link_to new_post_path do %>
+  New post
+<% end %>
 
