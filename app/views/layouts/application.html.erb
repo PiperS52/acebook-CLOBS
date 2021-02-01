@@ -47,5 +47,12 @@
 </nav>
 
     <%= yield %>
+
+    <br>
+    <h3>
+    <% flash.each do |name, msg| %>
+    <%= content_tag :div, msg, class: name %>
+    <% end %>
+  </h3>
   </body>
 </html>

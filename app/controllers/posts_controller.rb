@@ -3,6 +3,11 @@ class PostsController < ApplicationController
   before_action :authorize, except: :index
   skip_before_action :verify_authenticity_token
 
+
+  def show
+    @post = Post.find(params[:id])
+  end 
+
   def new
     @post = Post.new
   end
