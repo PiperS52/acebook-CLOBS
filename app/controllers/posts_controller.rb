@@ -18,12 +18,13 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.all
+    @posts = Post.joins(:user).select('posts.*, users.*')
   end
 
   def data
-    @posts = Post.all
-    render json: @posts.to_json
+    posts_with_username = Post.joins(:user).select('posts.*, users.*')
+    puts posts_with_username
+    render json: posts_with_username.to_json
   end
 
   private
