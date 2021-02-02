@@ -9,8 +9,7 @@ class AllPosts extends React.Component {
         <h1>All posts:
         <ul>
 
-          {this.props.posts.map((post) => <li>{post.message} (posted at:  {new Intl.DateTimeFormat("en-GB", {
-            year: "numeric", month: "long", day: "2-digit"}).format(post.created_at)} {post.user_id}</li>)}
+          {this.props.posts.map((post) => <li>{post.message} (posted at: {post.created_at} {post.user_id}</li>)}
         </ul>
 
         </h1>
