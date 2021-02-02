@@ -6,14 +6,14 @@ class MyComponent extends React.Component {
 
   constructor(props) {
     super(props);
-    this.rerenderAllPostsCallback = this.rerenderAllPostsCallback.bind(this);
     this.collectData = this.collectData.bind(this);
-    this.state = { data: this.props.data }
+    this.allPostsElement = React.createRef();
+    console.log('inside mycomponent')
+    console.log(this.props)
   }
 
 
-  rerenderAllPostsCallback() {
-
+  componentDidMount() {
       this.collectData();
   }
 
@@ -21,18 +21,20 @@ class MyComponent extends React.Component {
     fetch('http://localhost:3000/posts/data', {
         method: 'GET',
       }).then((response) => {
-        this.setState({ data: response.json() })
-      }).then(() => {
-        this.forceUpdate();
+        return response.json()
+      }).then((response) => {
+        console.log("inside second then")
+        console.log(response)
+        this.setState({ data: response },
+        this.allPostsElement.current.updatePosts(response))
       })
   }
 
   render () {
-    console.log(this.state)
     return (
       <React.Fragment>
-        <NewPost rerenderAllPostsCallback={this.rerenderAllPostsCallback}/>
-        <AllPosts posts={this.state.data}/>
+        <NewPost collectData={this.collectData} user={this.props.user}/>
+        <AllPosts ref={this.allPostsElement} posts={this.props.data} user={this.props.user}/>
       </React.Fragment>
     );
   }
