@@ -6,7 +6,10 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
-  end 
+    # @likable = @post
+    # @likes = @likable.likes 
+    # @like = Like.new
+  end
 
   def new
     @post = Post.new
@@ -30,6 +33,6 @@ class PostsController < ApplicationController
 
   def post_params
     params.require(:post).permit(:message, :user_id)
-  end 
+  end
 
 end

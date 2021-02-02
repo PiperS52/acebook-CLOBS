@@ -6,5 +6,9 @@ Rails.application.routes.draw do
 
   resources :posts do
     get 'data', on: :collection
+    resources :likes
   end
+  resources :comments do
+    resources :likes
+  end 
 end
