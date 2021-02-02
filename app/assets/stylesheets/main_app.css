@@ -10,7 +10,7 @@ body {
 .navbar {
   background-color: #008891;
   padding: 10px;
-  margin-bottom: 100px;
+  margin-bottom: 50px;
   margin-top: 10px;
   margin-right: 10px;
   margin-left: 10px;
@@ -100,35 +100,61 @@ textarea {
 
 /* Posts page styling */
 
-.new-post-link {
-  width: 20%;
+.new-post {
+  width: 50%;
   text-align: center;
-  border: 1px solid #e7e7de;
+  border: 1px solid black;
   border-radius: 15px;
-  margin: 20px;
+  margin: auto;
+  margin-bottom: 5px;
   font-size: 1.6em;
-  background-color: #0f3057
-}
-
-.new-post-link a {
-  text-decoration: none;
-  color: #e7e7de;
-}
-
-.new-post-link:hover {
-  text-decoration: none;
   background-color: #00587a;
   color: #e7e7de;
+  padding: 10px;
 }
 
-.new-post-link a:hover {
-  text-decoration: none;
-  color: #e7e7de;
-}
 
-.post-container p {
+.post-container {
   background-color: #e7e7de;
   border-radius: 10px;
-  border: 1px solid #00587a;
-  font-size: 2.5em;
+  margin: auto;
+  border: 1px solid black;
+  width: 50%;
+}
+
+.indiv-post {
+  width: 92%;
+  border: 1px solid black;
+  margin: 10px;
+  font-size: 1.4em;
+  border-radius: 10px;
+}
+
+.indiv-post-head {
+  background-color: #008891;
+  border-bottom: 1px solid black;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  font-size: 1.4em;
+  font-weight: 600;
+}
+
+.indiv-post-body {
+  background-color: #e7e7de;
+}
+
+.all-posts-head {
+  background-color: #00587a;
+  border-bottom: 1px solid black;
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+  color: #e7e7de;
+  text-align: center;
+}
+
+.post-head-btn {
+  border-radius: 10px;
+  background-color: #0f3057;
+  color:#e7e7de;
+  align-items: flex-end;
 }
