@@ -22,17 +22,18 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.joins(:user).select('posts.*, users.*')
+    @posts = Post.select("username, message, posts.id, posts.created_at").joins("INNER JOIN users ON users.id = posts.user_id")
   end
 
   def data
-    posts_with_username = Post.joins(:user).select('posts.*, users.*')
+    posts_with_username = Post.select("username, message, posts.id, posts.created_at").joins("INNER JOIN users ON users.id = posts.user_id")
     puts posts_with_username
     render json: posts_with_username.to_json
   end
 
   def destroy
-    @post = Post.delete(post_params)
+    @post = Post.find_by(id: params[:id]).destroy
+    redirect_to :index
   end
 
   private

@@ -1,23 +1,24 @@
 import React from "react"
 import PropTypes from "prop-types"
+
 class DeletePost extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      message: '',
-      user_id: this.props.user.id
+      id: this.props.id
    };
   }
 //for reference { data:@posts, user:current_user}
 
-  handleChange = (event) => {
-    this.setState({message: event.target.value});
-  }
+  // handleChange = (event) => {
+  //   this.setState({message: event.target.value});
+  // }
+  // console.log(this.state)${this.props.id}
 
   handleSubmit = (event) => {
-    alert('A message was posted: ' + this.state.message);
+    // alert('A message was posted: ' + this.state.message);
     let that = this
-    fetch('http://localhost:3000/posts/${id}', {
+    fetch(`http://localhost:3000/posts/${this.props.id}`, {
         method: 'DELETE',
         // We convert the React state to JSON and send it as the POST body
         headers: {
@@ -29,20 +30,19 @@ class DeletePost extends React.Component {
         that.props.collectData();
       });
 
-    event.preventDefault();
+    // event.preventDefault();
 }
 
   render() {
     return (
-      <div class='delete-post' onClick={() => this.handleSubmit()}>
-        <input type="text" value={this.state.value} onChange={this.handleChange} />
-        <input type="submit" value="Submit" />
+      <div className='delete-post' >
+        <button onClick={() => this.handleSubmit()}/>
       </div>
     );
   }
 }
-const e = React.createElement;
-const domContainer = document.getElementById('indiv-post-delete');
+// const e = React.createElement;
+// const domContainer = document.getElementById('indiv-post-delete');
 // ReactDOM.render(e(DeletPost), domContainer);
 
 export default DeletePost

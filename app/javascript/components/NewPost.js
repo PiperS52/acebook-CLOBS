@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 class NewPost extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { 
+    this.state = {
       message: '',
       user_id: this.props.user.id
    };
@@ -14,7 +14,7 @@ class NewPost extends React.Component {
   }
 
   handleSubmit = (event) => {
-    alert('A message was posted: ' + this.state.message);
+    // alert('A message was posted: ' + this.state.message);
     let that = this
     fetch('http://localhost:3000/posts', {
         method: 'POST',

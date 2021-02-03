@@ -12,5 +12,6 @@ Rails.application.routes.draw do
     resources :likes
   end
 
-  delete "users/:current_user_id/posts/:post_id" => "users/posts#show"
+  # delete "users/:current_user_id/posts/:post_id" => "users/posts#show"
+  #delete "/posts/:post_id" #=> "users/posts#show"
 end

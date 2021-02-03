@@ -1,6 +1,7 @@
 import React from "react"
 import Moment from 'react-moment';
 import moment from 'moment';
+import DeletePost from './DeletePost.js'
 
 class AllPosts extends React.Component {
 
@@ -44,8 +45,8 @@ class AllPosts extends React.Component {
                 posted at: {moment(post.created_at).format("MMMM Do YYYY, h:mm:ss a")}
                 <input type="submit" value="❤" />
               </div>
-              <div class='indiv-post-delete' id="indiv-post-delete">
-                <input type="submit" value="Delete" />
+              <div >
+                <DeletePost value="Delete" />
               </div>
               <div class='indiv-post-edit' id="indiv-post-edit">
                 <input type="submit" value="Update" />
