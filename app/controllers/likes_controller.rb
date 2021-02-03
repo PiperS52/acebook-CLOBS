@@ -1,5 +1,5 @@
 class LikesController < ApplicationController
-  before_filter :load_likable
+  before_action :load_likable
 
   def index
     # load_likable could be replaced by @likable = Post.find(params[:post_id])
@@ -17,7 +17,7 @@ class LikesController < ApplicationController
     else
       render :new
     end
-  end 
+  end
 
   private
 
