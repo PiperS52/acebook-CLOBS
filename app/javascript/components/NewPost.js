@@ -33,7 +33,7 @@ class NewPost extends React.Component {
 
   render() {
     return (
-      <form class='new-post' onSubmit={this.handleSubmit}>
+      <form className='new-post' onSubmit={this.handleSubmit}>
         <label>
           message:
           <input type="text" value={this.state.value} onChange={this.handleChange} />
