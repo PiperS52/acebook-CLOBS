@@ -17,7 +17,7 @@ class AllPosts extends React.Component {
   updatePosts(data) {
     this.setState({
       posts: data
-    })  
+    })
     console.log('inside updatePosts')
     console.log(this)
     console.log(this.state)
@@ -31,8 +31,8 @@ class AllPosts extends React.Component {
         <div class='all-posts-head'>
           <h1>All posts:</h1>
         </div>
-        <ul> 
-          {this.props.posts.map((post) => 
+        <ul>
+          {this.props.posts.map((post) =>
             <div class='indiv-post'>
               <div class='indiv-post-head'>
                 {post.username}
@@ -43,6 +43,12 @@ class AllPosts extends React.Component {
               <div class='indiv-post-footer'>
                 posted at: {moment(post.created_at).format("MMMM Do YYYY, h:mm:ss a")}
                 <input type="submit" value="❤" />
+              </div>
+              <div class='indiv-post-delete' id="indiv-post-delete">
+                <input type="submit" value="Delete" />
+              </div>
+              <div class='indiv-post-edit' id="indiv-post-edit">
+                <input type="submit" value="Update" />
               </div>
             </div>)}
         </ul>

@@ -7,7 +7,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     # @likable = @post
-    # @likes = @likable.likes 
+    # @likes = @likable.likes
     # @like = Like.new
   end
 
@@ -30,6 +30,10 @@ class PostsController < ApplicationController
     puts posts_with_username
     render json: posts_with_username.to_json
   end
+
+  def destroy
+    @post = Post.delete(post_params)
+  end 
 
   private
 
