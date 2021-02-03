@@ -1,4 +1,6 @@
 import React from "react"
+import Moment from 'react-moment';
+import moment from 'moment';
 
 class AllPosts extends React.Component {
 
@@ -39,7 +41,7 @@ class AllPosts extends React.Component {
                 {post.message}
               </div>
               <div class='indiv-post-footer'>
-                posted at:  {post.created_at}
+                posted at: {moment(post.created_at).format("MMMM Do YYYY, h:mm:ss a")}
                 <input type="submit" value="❤" />
               </div>
             </div>)}
