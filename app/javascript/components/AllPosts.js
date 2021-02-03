@@ -25,12 +25,25 @@ class AllPosts extends React.Component {
     console.log('inside render')
     console.log(this.state)
     return(
-      <div>
-        <h1>All posts:
-          <ul>
-            {this.state.posts.map((post) => <li>{post.message} (posted at:  {post.created_at}) {post.user_id}</li>)}
-          </ul>
-        </h1>
+      <div class='post-container'>
+        <div class='all-posts-head'>
+          <h1>All posts:</h1>
+        </div>
+        <ul> 
+          {this.props.posts.map((post) => 
+            <div class='indiv-post'>
+              <div class='indiv-post-head'>
+                {post.username}
+              </div>
+              <div class='indiv-post-body'>
+                {post.message}
+              </div>
+              <div class='indiv-post-footer'>
+                posted at:  {post.created_at}
+                <input type="submit" value="❤" />
+              </div>
+            </div>)}
+        </ul>
       </div>
       )
     }
