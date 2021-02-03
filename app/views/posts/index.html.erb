@@ -1,10 +1,4 @@
 
 <%= javascript_pack_tag 'application' %>
 
-<%= react_component("MyComponent", { data:@posts}) %>
-
-
-<%= link_to new_post_path do %>
-  New post
-<% end %>
-
+<%= react_component("MyComponent", { data:@posts, user:current_user}) %>
