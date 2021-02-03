@@ -14,13 +14,13 @@ class AllPosts extends React.Component {
             <div class='indiv-post'>
               <div class='indiv-post-head'>
                 {post.username}
-                <input type="submit" value="❤" />
               </div>
               <div class='indiv-post-body'>
                 {post.message}
               </div>
               <div class='indiv-post-footer'>
                 posted at:  {post.created_at}
+                <input type="submit" value="❤" />
               </div>
             </div>)}
         </ul>
