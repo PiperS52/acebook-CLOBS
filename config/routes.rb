@@ -10,5 +10,7 @@ Rails.application.routes.draw do
   end
   resources :comments do
     resources :likes
-  end 
+  end
+
+  delete "users/:current_user_id/posts/:post_id" => "users/posts#show"
 end

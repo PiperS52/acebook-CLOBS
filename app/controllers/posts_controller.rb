@@ -33,7 +33,7 @@ class PostsController < ApplicationController
 
   def destroy
     @post = Post.delete(post_params)
-  end 
+  end
 
   private
 

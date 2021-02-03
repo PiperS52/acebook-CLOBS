@@ -1,6 +1,7 @@
 import React from "react"
 import AllPosts from "./AllPosts.js"
 import NewPost from "./NewPost"
+import DeletePost from "./DeletePost"
 import PropTypes from "prop-types"
 class MyComponent extends React.Component {
 
@@ -12,7 +13,7 @@ class MyComponent extends React.Component {
     console.log(this.props)
   }
 
-
+  //this is called 2nd - retrieving data
   componentDidMount() {
       this.collectData();
   }

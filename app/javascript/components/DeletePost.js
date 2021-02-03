@@ -8,6 +8,7 @@ class DeletePost extends React.Component {
       user_id: this.props.user.id
    };
   }
+//for reference { data:@posts, user:current_user}
 
   handleChange = (event) => {
     this.setState({message: event.target.value});
@@ -16,7 +17,7 @@ class DeletePost extends React.Component {
   handleSubmit = (event) => {
     alert('A message was posted: ' + this.state.message);
     let that = this
-    fetch('http://localhost:3000/posts' + id, {
+    fetch('http://localhost:3000/posts/${id}', {
         method: 'DELETE',
         // We convert the React state to JSON and send it as the POST body
         headers: {
@@ -42,6 +43,6 @@ class DeletePost extends React.Component {
 }
 const e = React.createElement;
 const domContainer = document.getElementById('indiv-post-delete');
-ReactDOM.render(e(DeletPost), domContainer);
+// ReactDOM.render(e(DeletPost), domContainer);
 
-export default NewPost
+export default DeletePost
