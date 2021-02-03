@@ -50,5 +50,3 @@ class AllPosts extends React.Component {
 }
 
 export default AllPosts
-
-  
