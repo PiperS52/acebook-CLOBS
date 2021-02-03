@@ -4,26 +4,51 @@ import moment from 'moment';
 
 class AllPosts extends React.Component {
 
-  render(){
+  constructor(props) {
+    super(props)
+    this.updatePosts = this.updatePosts.bind(this)
+    console.log('inside AllPosts')
     console.log(this.props.posts)
-    return(
-      <div>
-        <h1>All posts:
-        <ul>
-
-          {this.props.posts.map((post) => <li>{post.message}
-          posted at: {moment(post.created_at).format("MMMM Do YYYY, h:mm:ss a")} {post.user_id}</li>)}
-        </ul>
-
-        </h1>
-      </div>
-      )
+    this.state = {
+      posts: this.props.posts
     }
   }
 
+  updatePosts(data) {
+    this.setState({
+      posts: data
+    })  
+    console.log('inside updatePosts')
+    console.log(this)
+    console.log(this.state)
+  }
+
+  render () {
+    console.log('inside render')
+    console.log(this.state)
+    return(
+      <div class='post-container'>
+        <div class='all-posts-head'>
+          <h1>All posts:</h1>
+        </div>
+        <ul> 
+          {this.props.posts.map((post) => 
+            <div class='indiv-post'>
+              <div class='indiv-post-head'>
+                {post.username}
+              </div>
+              <div class='indiv-post-body'>
+                {post.message}
+              </div>
+              <div class='indiv-post-footer'>
+                posted at: {moment(post.created_at).format("MMMM Do YYYY, h:mm:ss a")}
+                <input type="submit" value="❤" />
+              </div>
+            </div>)}
+        </ul>
+      </div>
+      )
+    }
+}
+
 export default AllPosts
-
-
-// commands:
-// npm install --save moment react-moment
-// npm i moment --save 
