@@ -2,9 +2,6 @@
   "name": "acebook",
   "private": true,
   "proxy": "http://localhost:3000",
-  "engines": {
-    "node": "15.x"
-  }
   "dependencies": {
     "@babel/preset-react": "^7.12.10",
     "@rails/webpacker": "4.3.0",
