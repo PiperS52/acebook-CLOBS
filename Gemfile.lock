@@ -207,8 +207,6 @@ GEM
       activesupport (>= 4.0)
       sprockets (>= 3.0.0)
     terminal-table (1.6.0)
-    terser (1.1.1)
-      execjs (>= 0.3.0, < 3)
     thor (1.1.0)
     thread_safe (0.3.6)
     tilt (2.0.10)
@@ -252,7 +250,6 @@ DEPENDENCIES
   selenium-webdriver
   simplecov (~> 0.21.2)
   simplecov-console
-  terser
   tzinfo-data
   uglifier (>= 4.2.0)
   web-console (>= 3.3.0)
