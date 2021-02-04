@@ -10,11 +10,11 @@ class NewPost extends React.Component {
   }
 
   handleChange = (event) => {
+    this.setState({value: event.target.value});
     this.setState({message: event.target.value});
   }
 
   handleSubmit = (event) => {
-    alert('A message was posted: ' + this.state.message);
     let that = this
     fetch('http://localhost:3000/posts', {
         method: 'POST',
@@ -29,6 +29,7 @@ class NewPost extends React.Component {
       });
 
     event.preventDefault();
+    that.setState({value: ""})
 }
 
   render() {

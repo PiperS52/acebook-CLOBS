@@ -21,11 +21,11 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.joins("INNER JOIN users ON posts.user_id = users.id")
+    @posts = Post.joins("INNER JOIN users ON posts.user_id = users.id").select('posts.*, users.*').order(id: :desc)
   end
 
   def data
-    posts_with_username = Post.joins("INNER JOIN users ON posts.user_id = users.id")
+    posts_with_username = Post.joins("INNER JOIN users ON posts.user_id = users.id").select('posts.*, users.*').order(id: :desc)
     puts posts_with_username
     render json: posts_with_username.to_json
   end
