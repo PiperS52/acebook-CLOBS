@@ -46,7 +46,7 @@ class AllPosts extends React.Component {
                 <input type="submit" value="❤" />
               </div>
               <div >
-                <DeletePost value="Delete" />
+                <DeletePost post_id={post.id} collectData={this.props.collectData}/>
               </div>
               <div class='indiv-post-edit' id="indiv-post-edit">
                 <input type="submit" value="Update" />

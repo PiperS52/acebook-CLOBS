@@ -4,18 +4,13 @@ import PropTypes from "prop-types"
 class DeletePost extends React.Component {
   constructor(props) {
     super(props);
+    console.log(props)
   }
-//for reference { data:@posts, user:current_user}
-
-  // handleChange = (event) => {
-  //   this.setState({message: event.target.value});
-  // }
-  // console.log(this.state)${this.props.id}
 
   handleSubmit = (event) => {
     // alert('A message was posted: ' + this.state.message);
     let that = this
-    fetch(`http://localhost:3000/posts/${this.props.post.id}`, {
+    fetch(`http://localhost:3000/posts/${this.props.post_id}`, {
         method: 'DELETE',
         // We convert the React state to JSON and send it as the POST body
         headers: {
@@ -33,7 +28,9 @@ class DeletePost extends React.Component {
   render() {
     return (
       <div className='delete-post' >
-        <button onClick={() => this.handleSubmit()}/>
+        <button onClick={() => this.handleSubmit()}>
+          Delete
+        </button>
       </div>
     );
   }
