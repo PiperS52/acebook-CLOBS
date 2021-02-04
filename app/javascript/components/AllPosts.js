@@ -33,7 +33,7 @@ class AllPosts extends React.Component {
           <h1>All posts:</h1>
         </div>
         <ul>
-          {this.props.posts.map((post) =>
+          {this.state.posts.map((post) =>
             <div class='indiv-post'>
               <div class='indiv-post-head'>
                 {post.username}
