@@ -15,6 +15,10 @@ class LikesController < ApplicationController
     @like = Like.create(like_params)
   end
 
+  def destroy
+    Like.where(likable_id: params[:post_id], user_id: current_user.id).destroy_all
+  end
+
   private
 
   def like_params

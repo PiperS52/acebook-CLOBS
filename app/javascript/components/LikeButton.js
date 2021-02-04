@@ -4,6 +4,7 @@ class LikeButton extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
+        likesArray: [],
         liked: false,
         likable_id: this.props.likable_id,
         user_id: this.props.user_id,
@@ -13,9 +14,9 @@ class LikeButton extends React.Component {
 }
 
   handleClick = () => {
-        if(this.state.liked === true) {
-          return
-        }
+        if(this.state.liked == true) {
+          this.handleUnlike()
+        } else {
         this.setState({
             liked: true,
             likeCount: this.state.likeCount +=1
@@ -30,6 +31,25 @@ class LikeButton extends React.Component {
           }).then(function(response) {
             console.log(response)
           });
+
+        }
+  }
+
+  handleUnlike = () => {
+    console.log("inside handleUnlike")
+    this.setState({
+        liked: false,
+        likeCount: this.state.likeCount -=1
+    })
+    fetch(`http://localhost:3000/posts/${this.props.likable_id}/likes/${this.state.user_id}` , {
+        method: 'DELETE',
+        // We convert the React state to JSON and send it as the POST body
+        headers: {
+          'Content-Type': 'application/json',
+       }
+        }).then(function(response) {
+        console.log(response)
+      });
   }
 
   componentDidMount() {
@@ -41,8 +61,16 @@ class LikeButton extends React.Component {
       return response.json()
     }).then(function(response){
       console.log(response)
+      response.map((like) => {
+      if (like.user_id === that.state.user_id) {
+          that.setState({
+              liked: true
+          })
+      }
+    })
       that.setState({
-        likeCount: response.length
+        likeCount: response.length,
+        likesArray: response
       })
     })
   }
