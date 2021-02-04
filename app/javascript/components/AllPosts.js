@@ -25,7 +25,7 @@ class AllPosts extends React.Component {
 
   render () {
     console.log('inside render')
-    console.log(this.props.posts)
+    console.log(this.state.posts)
     return(
       <div className='post-container'>
         <div className='all-posts-head'>

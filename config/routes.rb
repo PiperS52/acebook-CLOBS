@@ -8,7 +8,7 @@ Rails.application.routes.draw do
   
   resources :posts do
     get 'data', on: :collection
-    get 'find_likes', on: :collection
+    get 'find_likes', on: :member
     resources :likes
   end
 

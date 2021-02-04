@@ -3,20 +3,16 @@ class LikesController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
-    # load_likable could be replaced by @likable = Post.find(params[:post_id])
-    @likes = @likable.likes
+    @post = Post.find(params[:post_id])
+    @likes = @post.likes
   end
 
   # def new
-  #   @like = @likable.liks.new
+  #   @like = Post.like.new
   # end
 
   def create
     @like = Like.create(like_params)
-  end
-
-  def find_likes 
-    Like.where({ likable_type: "Post", likable_id: like_params[:likable_id] })
   end
 
   private

@@ -30,6 +30,12 @@ class PostsController < ApplicationController
     render json: posts_with_username.to_json
   end
 
+  def find_likes 
+    @post = Post.find(params[:id])
+    @likes = @post.likes
+    render json: @likes.to_json
+  end
+
   private
 
   def post_params
