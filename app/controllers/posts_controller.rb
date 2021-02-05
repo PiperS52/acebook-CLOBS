@@ -18,20 +18,30 @@ class PostsController < ApplicationController
     redirect_to posts_url
   end
 
+  # def index
+  #   @posts = Post.joins("INNER JOIN users ON posts.user_id = users.id").select('posts.*, users.*').order(id: :desc)
+  # end
+
   def index
-    @posts = Post.joins("INNER JOIN users ON posts.user_id = users.id").select('posts.*, users.*').order(id: :desc)
+    @posts = Post.select("username, message, posts.id, posts.created_at, posts.user_id").joins("INNER JOIN users ON users.id = posts.user_id").order(id: :desc)
   end
 
 
+  # def data
+  #   posts_with_username = Post.joins("INNER JOIN users ON posts.user_id = users.id").select('posts.*, users.*').order(id: :desc)
+  #   render json: posts_with_username.to_json
+  # end
+
   def data
-    posts_with_username = Post.joins("INNER JOIN users ON posts.user_id = users.id").select('posts.*, users.*').order(id: :desc)
+    posts_with_username = Post.select("username, message, posts.id, posts.created_at, posts.user_id").joins("INNER JOIN users ON users.id = posts.user_id").order(id: :desc)
     render json: posts_with_username.to_json
   end
 
   def destroy
     @post = current_user.posts.find(params[:id]).destroy
+  end
 
-  def find_likes 
+  def find_likes
     @post = Post.find(params[:id])
     @likes = @post.likes
     render json: @likes.to_json
@@ -42,5 +52,5 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:message, :user_id)
   end
-  
+
 end

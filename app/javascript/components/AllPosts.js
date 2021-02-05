@@ -25,8 +25,8 @@ class AllPosts extends React.Component {
         <div className='all-posts-head'>
           <h1>Post Feed</h1>
         </div>
-        <ul> 
-          {this.state.posts.map((post) => 
+        <ul>
+          {this.state.posts.map((post) =>
             <div className='indiv-post'>
               <div className='indiv-post-head'>
                 {post.username}
@@ -40,9 +40,6 @@ class AllPosts extends React.Component {
               </div>
               <div >
                 <DeletePost post_id={post.id} collectData={this.props.collectData}/>
-              </div>
-              <div class='indiv-post-edit' id="indiv-post-edit">
-                <input type="submit" value="Update" />
               </div>
             </div>)}
         </ul>
