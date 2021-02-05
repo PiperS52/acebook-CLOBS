@@ -4,12 +4,8 @@ class PostsController < ApplicationController
 
   skip_before_action :verify_authenticity_token
 
-
   def show
     @post = Post.find(params[:id])
-    # @likable = @post
-    # @likes = @likable.likes
-    # @like = Like.new
   end
 
   def new
@@ -23,28 +19,22 @@ class PostsController < ApplicationController
   end
 
   def index
-    @posts = Post.select("username, message, posts.id, posts.created_at, posts.user_id").joins("INNER JOIN users ON users.id = posts.user_id")
+    @posts = Post.joins("INNER JOIN users ON posts.user_id = users.id").select('posts.*, users.*').order(id: :desc)
   end
 
-  # def index
-  #   @posts = Post.joins("INNER JOIN users ON posts.user_id = users.id")
-  # end
 
   def data
-    posts_with_username = Post.select("username, message, posts.id, posts.created_at, posts.user_id").joins("INNER JOIN users ON users.id = posts.user_id")
-    puts posts_with_username
+    posts_with_username = Post.joins("INNER JOIN users ON posts.user_id = users.id").select('posts.*, users.*').order(id: :desc)
     render json: posts_with_username.to_json
   end
 
-  # def data
-  #   posts_with_username = Post.joins("INNER JOIN users ON posts.user_id = users.id")
-  #   puts posts_with_username
-  #   render json: posts_with_username.to_json
-  # end
-
   def destroy
     @post = current_user.posts.find(params[:id]).destroy
-    #@post = Post.find_by(id: params[:id]).destroy    this deletes anything
+
+  def find_likes 
+    @post = Post.find(params[:id])
+    @likes = @post.likes
+    render json: @likes.to_json
   end
 
   private
@@ -52,5 +42,5 @@ class PostsController < ApplicationController
   def post_params
     params.require(:post).permit(:message, :user_id)
   end
-
+  
 end

@@ -1,45 +1,37 @@
 body {
-  background-image: url("https://images.unsplash.com/photo-1558299244-f4bb4dd735b2?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1050&q=80");
-  background-color: #cccccc;
-  background-repeat: no-repeat;
-  background-size: cover;
-  font-family: 'Amatic SC', cursive;
+  background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
+  font-family: 'Roboto', sans-serif;
   font-size: larger;
+  min-height: 100vh;
+  padding-bottom: 20px;
  }
 
 .navbar {
-  background-color: #008891;
-  padding: 10px;
+  background-image: linear-gradient(15deg, #13547a 0%, #80d0c7 100%);
   margin-bottom: 50px;
-  margin-top: 10px;
-  margin-right: 10px;
-  margin-left: 10px;
-  border-radius: 10px;
-  border: 1px solid #e7e7de;
 
   li .nav-link {
-    font-size: 1.5em;
+    font-size: 1.2em;
     text-decoration: none;
     color: #e7e7de;
 
     &:hover {
-    font-size: 1.7em;
-    color: #00587a;
+    text-decoration: underline;
     }
   }
 }
 
 .navbar-brand {
-  font-size: 3em;
-  color: #e7e7de;
-  font-family: 'Amatic SC', cursive;
+  font-size: 2.1em;
+  color: #21d190;
+  color: linear-gradient(315deg, #21d190 0%, #d65bca 74%);
+  font-family: 'Roboto', sans-serif;
+  font-weight: bolder;
 
   &:hover {
     color: #00587a;
   }
 }
-
-/* Log in styling */
 
 .log-in-container { 
   width: 25vw;
@@ -49,11 +41,11 @@ body {
   border-radius: 15px;
   background-color:#008891;
   color:#e7e7de;
-  font-size: 1.6em;
+  font-size: 1.2em;
   border: 1px solid #e7e7de;
 
   h1 {
-    font-size: 3em;
+    font-size: 1.6em;
   }
 
   input[type='submit'] {
@@ -73,74 +65,80 @@ body {
   border-radius: 15px;
   background-color:#008891;
   color:#e7e7de;
-  font-size: 1.6em;
+  font-size: 1.2em;
   border: 1px solid #e7e7de;
 }
 
-/* Posts page styling */
-
 .new-post {
-  width: 50%;
+  width: 60%;
   text-align: center;
-  border: 1px solid black;
-  border-radius: 15px;
+  border: 3px solid #00587a;
   margin: auto;
-  margin-bottom: 5px;
-  font-size: 1.6em;
+  font-size: 1.2em;
   background-color: #00587a;
   color: #e7e7de;
   padding: 10px;
+
+  textarea {
+    width: 70%;
+    height: 80%;
+  }
 }
 
 
 .post-container {
   background-color: #e7e7de;
-  border-radius: 10px;
   margin: auto;
-  border: 1px solid black;
-  width: 50%;
+  border: 3px solid #00587a;
+  width: 60%;
 }
 
 .indiv-post {
   width: 92%;
-  border: 1px solid black;
-  margin: 10px;
-  font-size: 1.4em;
-  border-radius: 10px;
+  border: 3px solid #008891;
+  margin: 15px;
+  font-size: 1.2em;
 }
 
 .indiv-post-head {
   background-color: #008891;
-  border-bottom: 1px solid black;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
-  font-size: 1.4em;
+  font-size: 1.2em;
   font-weight: 600;
-  padding-left: 5px;
+  padding-left: 10px;
 }
 
 .indiv-post-body {
   background-color: #e7e7de;
+  padding-left: 10px;
 }
 
 .indiv-post-footer {
-  input[type='submit'] {
+  padding-left: 10px;
+  font-size: 16px;
+
+  button {
     border-radius: 5px;
     background-color: #e7e7de;
-    color: red;
-    justify-content: flex-end;
-    display: flex;
     font-size: 15px;
-    margin: 5px;
+    margin: 3px;
+    padding: 5px;
+    margin-left: 0;
   }
 }
 
 .all-posts-head {
   background-color: #00587a;
-  border-bottom: 1px solid black;
-  border-top-left-radius: 8px;
-  border-top-right-radius: 8px;
+  border-bottom: 3px solid #00587a;
   color: #e7e7de;
   text-align: center;
+  font-size: 1.6em;
 }
 
+.alert {
+  position: absolute;
+  bottom: 0px; // Should be same as the height of the header
+  width: 105%;
+  margin: 0;
+  background-color: #21d190;
+  background-image: linear-gradient(315deg, #21d190 0%, #d65bca 74%);
+}
