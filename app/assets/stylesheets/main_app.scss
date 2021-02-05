@@ -2,8 +2,8 @@ body {
   background-image: linear-gradient(to top, #cfd9df 0%, #e2ebf0 100%);
   font-family: 'Roboto', sans-serif;
   font-size: larger;
-  border: 1px solid red;
   min-height: 100vh;
+  padding-bottom: 20px;
  }
 
 .navbar {
@@ -23,15 +23,15 @@ body {
 
 .navbar-brand {
   font-size: 2.1em;
-  color: #e7e7de;
+  color: #21d190;
+  color: linear-gradient(315deg, #21d190 0%, #d65bca 74%);
   font-family: 'Roboto', sans-serif;
+  font-weight: bolder;
 
   &:hover {
     color: #00587a;
   }
 }
-
-/* Log in styling */
 
 .log-in-container { 
   width: 25vw;
@@ -69,8 +69,6 @@ body {
   border: 1px solid #e7e7de;
 }
 
-/* Posts page styling */
-
 .new-post {
   width: 60%;
   text-align: center;
@@ -98,8 +96,7 @@ body {
 .indiv-post {
   width: 92%;
   border: 3px solid #008891;
-  margin: 10px;
-  margin-right: 15px;
+  margin: 15px;
   font-size: 1.2em;
 }
 
@@ -142,5 +139,6 @@ body {
   bottom: 0px; // Should be same as the height of the header
   width: 105%;
   margin: 0;
-  background-image: linear-gradient(to top, #37ecba 0%, #72afd3 100%);
+  background-color: #21d190;
+  background-image: linear-gradient(315deg, #21d190 0%, #d65bca 74%);
 }

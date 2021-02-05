@@ -37,16 +37,17 @@
         </button>
     </div>
     <div class="navbar-collapse collapse w-100 order-3 dual-collapse2">
-    <%# Leave this here to keep the brand in the centre of nav %>
     </div>
+  </div>
 </nav>
+<div class='alert-div'>
+  <% flash.each do |name, msg| %>
+  <%= content_tag :div, msg, class: name %>
+  <% end %>
+</div>
+<br>
 
     <%= yield %>
 
-<footer>
-    <% flash.each do |name, msg| %>
-    <%= content_tag :div, msg, class: name %>
-    <% end %>
-</footer>
-  </body>
+</body>
 </html>
