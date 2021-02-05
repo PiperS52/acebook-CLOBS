@@ -18,6 +18,7 @@ class LikeButton extends React.Component {
           this.handleUnlike()
         } else {
         this.setState({
+            heartColor: 'red',
             liked: true,
             likeCount: this.state.likeCount +=1
         })
@@ -38,6 +39,7 @@ class LikeButton extends React.Component {
   handleUnlike = () => {
     console.log("inside handleUnlike")
     this.setState({
+        heartColor: 'black',
         liked: false,
         likeCount: this.state.likeCount -=1
     })
@@ -78,7 +80,7 @@ class LikeButton extends React.Component {
   render () {
     return(
           <div className='like-button'>
-            <button onClick={this.handleClick}>❤ Likes: {this.state.likeCount}</button>
+            <button onClick={this.handleClick} style={{color: this.state.heartColor}}>❤ Likes: {this.state.likeCount}</button>
           </div>)
     }
 }
