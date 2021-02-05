@@ -35,10 +35,8 @@ class NewPost extends React.Component {
   render() {
     return (
       <form className='new-post' onSubmit={this.handleSubmit}>
-        <label>
-          message:
-          <input type="text" value={this.state.value} onChange={this.handleChange} />
-        </label>
+        <textarea type="text" value={this.state.value} onChange={this.handleChange} placeholder="Post new message..."/>
+        <br />
         <input type="submit" value="Submit" />
       </form>
     );
