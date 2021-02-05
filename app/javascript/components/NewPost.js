@@ -1,9 +1,10 @@
 import React from "react"
 import PropTypes from "prop-types"
+
 class NewPost extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { 
+    this.state = {
       message: '',
       user_id: this.props.user.id
    };
@@ -18,13 +19,11 @@ class NewPost extends React.Component {
     let that = this
     fetch('http://localhost:3000/posts', {
         method: 'POST',
-        // We convert the React state to JSON and send it as the POST body
         headers: {
           'Content-Type': 'application/json',
        },
         body: JSON.stringify(this.state)
       }).then(function(response) {
-        console.log(response)
         that.props.collectData();
       });
 

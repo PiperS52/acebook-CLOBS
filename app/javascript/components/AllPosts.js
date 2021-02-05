@@ -1,14 +1,13 @@
 import React from "react"
 import Moment from 'react-moment';
 import moment from 'moment';
+import DeletePost from './DeletePost.js'
 import LikeButton from './LikeButton.js'
 
 class AllPosts extends React.Component {
   constructor(props) {
     super(props)
     this.updatePosts = this.updatePosts.bind(this)
-    console.log('inside AllPosts')
-    console.log(this.props.posts)
     this.state = {
       posts: this.props.posts
     }
@@ -17,15 +16,10 @@ class AllPosts extends React.Component {
   updatePosts(data) {
     this.setState({
       posts: data
-    })  
-    console.log('inside updatePosts')
-    console.log(this)
-    console.log(this.state)
+    })
   }
 
   render () {
-    console.log('inside render')
-    console.log(this.state.posts)
     return(
       <div className='post-container'>
         <div className='all-posts-head'>
@@ -43,6 +37,12 @@ class AllPosts extends React.Component {
               <div className='indiv-post-footer'>
                 posted at: {moment(post.created_at).format("MMMM Do YYYY, h:mm:ss a")}
                 <LikeButton likable_id={post.id} user_id={this.props.user.id}/>
+              </div>
+              <div >
+                <DeletePost post_id={post.id} collectData={this.props.collectData}/>
+              </div>
+              <div class='indiv-post-edit' id="indiv-post-edit">
+                <input type="submit" value="Update" />
               </div>
             </div>)}
         </ul>
