@@ -29,7 +29,7 @@ class AllPosts extends React.Component {
     return(
       <div className='post-container'>
         <div className='all-posts-head'>
-          <h1>All posts:</h1>
+          <h1>Post Feed</h1>
         </div>
         <ul> 
           {this.state.posts.map((post) => 
@@ -42,7 +42,7 @@ class AllPosts extends React.Component {
               </div>
               <div className='indiv-post-footer'>
                 posted at: {moment(post.created_at).format("MMMM Do YYYY, h:mm:ss a")}
-                < LikeButton likable_id={post.id} user_id={this.props.user.id}/>
+                <LikeButton likable_id={post.id} user_id={this.props.user.id}/>
               </div>
             </div>)}
         </ul>
