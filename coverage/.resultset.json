@@ -1,6 +1,29 @@
 {
   "RSpec": {
     "coverage": {
+      "/Users/simonpiper/MCourse/week8/acebook-CLOBS/spec/controllers/likes_controller_spec.rb": {
+        "lines": [
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null
+        ]
+      },
       "/Users/simonpiper/MCourse/week8/acebook-CLOBS/spec/controllers/posts_controller_spec.rb": {
         "lines": [
           1,
@@ -288,6 +311,12 @@
       "/Users/simonpiper/MCourse/week8/acebook-CLOBS/config/routes.rb": {
         "lines": [
           1,
+          null,
+          1,
+          1,
+          1,
+          null,
+          1,
           1,
           1,
           1,
@@ -295,11 +324,18 @@
           null,
           1,
           1,
+          null,
           null,
           null
         ]
       },
       "/Users/simonpiper/MCourse/week8/acebook-CLOBS/app/helpers/application_helper.rb": {
+        "lines": [
+          1,
+          null
+        ]
+      },
+      "/Users/simonpiper/MCourse/week8/acebook-CLOBS/app/helpers/likes_helper.rb": {
         "lines": [
           1,
           null
@@ -322,8 +358,8 @@
           1,
           null,
           1,
-          1,
           null,
+          1,
           null,
           1,
           0,
@@ -336,10 +372,21 @@
           1,
           1,
           1,
+          1,
+          null,
+          null,
+          null,
+          null,
           null,
           null,
           1,
           1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
           null,
           null,
           1,
@@ -348,9 +395,19 @@
           null,
           null,
           1,
+          0,
+          null,
           null,
           1,
+          0,
+          0,
+          0,
+          null,
+          null,
           1,
+          null,
+          1,
+          2,
           null,
           null,
           null
@@ -368,7 +425,7 @@
           null,
           1,
           1,
-          1,
+          2,
           null,
           null,
           1,
@@ -437,18 +494,18 @@
           null,
           null,
           1,
-          0,
-          0,
+          1,
+          1,
           0,
           0,
           null,
-          0,
+          1,
           null,
           null,
           null,
           1,
           1,
-          0,
+          1,
           null,
           null
         ]
@@ -568,6 +625,25 @@
           null
         ]
       },
+      "/Users/simonpiper/MCourse/week8/acebook-CLOBS/spec/helpers/likes_helper_spec.rb": {
+        "lines": [
+          1,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
       "/Users/simonpiper/MCourse/week8/acebook-CLOBS/spec/helpers/sessions_helper_spec.rb": {
         "lines": [
           1,
@@ -606,6 +682,47 @@
           null
         ]
       },
+      "/Users/simonpiper/MCourse/week8/acebook-CLOBS/spec/models/comment_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/simonpiper/MCourse/week8/acebook-CLOBS/app/models/comment.rb": {
+        "lines": [
+          1,
+          1,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/simonpiper/MCourse/week8/acebook-CLOBS/app/models/application_record.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/simonpiper/MCourse/week8/acebook-CLOBS/spec/models/like_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/simonpiper/MCourse/week8/acebook-CLOBS/app/models/like.rb": {
+        "lines": [
+          1,
+          1,
+          null
+        ]
+      },
       "/Users/simonpiper/MCourse/week8/acebook-CLOBS/spec/models/post_spec.rb": {
         "lines": [
           1,
@@ -618,12 +735,6 @@
       "/Users/simonpiper/MCourse/week8/acebook-CLOBS/app/models/post.rb": {
         "lines": [
           1,
-          1,
-          null
-        ]
-      },
-      "/Users/simonpiper/MCourse/week8/acebook-CLOBS/app/models/application_record.rb": {
-        "lines": [
           1,
           1,
           null
@@ -648,9 +759,27 @@
           1,
           null,
           1,
-          0,
+          1,
           0,
           null,
+          null
+        ]
+      },
+      "/Users/simonpiper/MCourse/week8/acebook-CLOBS/spec/views/likes/index.html.erb_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
+          null
+        ]
+      },
+      "/Users/simonpiper/MCourse/week8/acebook-CLOBS/spec/views/likes/new.html.erb_spec.rb": {
+        "lines": [
+          1,
+          null,
+          1,
+          1,
           null
         ]
       },
@@ -664,6 +793,6 @@
         ]
       }
     },
-    "timestamp": 1612214833
+    "timestamp": 1615224318
   }
 }

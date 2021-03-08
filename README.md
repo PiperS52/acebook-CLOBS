@@ -1,37 +1,79 @@
 # AceBook
 [![Build Status](https://travis-ci.org/PiperS52/acebook-CLOBS.svg?branch=master)](https://travis-ci.org/PiperS52/acebook-CLOBS)
 
-[![Test Coverage](https://api.codeclimate.com/v1/badges/31c88352bd7ca2b144ac/test_coverage)](https://codeclimate.com/github/PiperS52/acebook-CLOBS/test_coverage)
-
 [![Maintainability](https://api.codeclimate.com/v1/badges/31c88352bd7ca2b144ac/maintainability)](https://codeclimate.com/github/PiperS52/acebook-CLOBS/maintainability)
 
-*testing git with heroku
+Sign-up landing page
 
-REQUIRED INSTRUCTIONS:
+![](images/Sign-up-screenshot.png)
 
-1. Fork this repository to `acebook-teamname` and customize
-the below**
+Posts homepage
 
-[You can find the engineering project outline here.](https://github.com/makersacademy/course/tree/master/engineering_projects/rails)
+![](images/Homepage-screenshot.png)
 
-2. The card wall is here: <please update>
+## Brief
 
-## How to contribute to this project
-See [CONTRIBUTING.md](CONTRIBUTING.md)
+This was a group project as part of Makers Academy, with the aim of engineering a social media platform using a new framework, while implementing single-page app functionality for user posts and likes.
 
-## Quickstart
+## User Stories
 
-First, clone this repository. Then:
-
-```bash
-> bundle install
-> bin/rails db:create
-> bin/rails db:migrate
-
-> bundle exec rspec # Run the tests to ensure it works
-> bin/rails server # Start the server at localhost:3000
 ```
-## Trello Board
-https://trello.com/b/lvw4CKtU/clobs-acebook
+As a user
+So that I can join the platform
+I would like to be able to sign up
 
-...
+As a user
+So that I can see which users have created which posts
+I would like users to be able to login
+
+As a user
+In order to ensure privacy
+I would like to only allow logged in users to be able to see posts
+
+As a user
+So that I can share my thoughts with other users
+I would like to be able to easily create posts without refreshing the page
+
+As a user
+In case I change my mind
+I would like to be able to remove only my own posts, without refreshing the page 
+
+As a user
+So that I can show my appreciation for other users' posts
+I would like to be able to like another post without refreshing the page, as well as remove it if I change my mind
+
+As a user
+In order that I can see other users response to posts
+I would like to see the count of likes for each post, with each user only able to like a post once
+```
+
+## Technologies used
+
+Ruby, Rails, PostgreSQL, ReactJS, RSpec
+
+## Getting started
+
+Clone this repository:
+```
+$ git clone https://github.com/PiperS52/acebook-CLOBS.git
+```
+Install the relevant dependancies:
+```
+$ bundle install
+$ bin/rails db:create
+$ bin/rails db:migrate
+```
+Run the server:
+```
+$ bin/rails server # Start the server at localhost:3000
+```
+To run the tests:
+```
+$ bundle exec rspec
+```
+
+## Contributions
+
+Many thanks to the rest of the acebook-CLOBS team:<br/>
+[Luke Wickens](https://github.com/lukewickens1989), [Ben Lawrence](https://github.com/Ben-glitch-cloud),
+[Chris Abdo](https://github.com/chrismabdo), and [Ollie Norman](https://github.com/ollienorman)
